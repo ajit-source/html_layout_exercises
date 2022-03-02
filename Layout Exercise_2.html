@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloneHomePage ATDev Services</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #body1{
+            background-image: #FFFFFF;
+            width: 1550px;
+            height: 100px;
+        }
+        #body2{
+            background-color: aliceblue;
+            width: 1550px;
+            height: 800px;
+        }
+        #logo{
+            width: 125px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .navel{
+            left: 750px;
+            position: inline-block;
+            float: right;
+            margin: 30px
+        }
+
+        .headerelement{
+            right: 350px;
+            position: relative;
+            top:20px;
+            font-weight: lighter;
+            color: rgb(1,112,187);
+            font-size: 15px;
+            border: none;
+            background-color: none;
+            cursor: pointer;
+        }
+
+        .headerelement:hover, .headerelement:focus{
+            color:rgb(0, 61, 102);
+        }
+
+        .dropdown{
+            position: relative;
+            display:inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 140px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a{
+            font-style: none;
+            color: rgb(1,112,187);;
+        }
+
+        .dropdown-content a:hover{
+            color: rgb(0, 61, 102);;
+        }
+        .show{display: block;}
+
+        .hiroImg{
+            position: relative;
+            right: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <div id="body1">
+            <img src="https://integration.anytimedeveloper.com/pluginfile.php/1/theme_edumy/headerlogo1/1643545703/Logo_png_72dpi%20-%20Small_ccexpress.png" id="logo">
+            <div class="navel"><h1 class="headerelement">Home</h1></div>
+            <div class="navel"><h1 class="headerelement">Services</h1></div>
+            <div class="navel"><div class="dropdown">
+                <button onclick="getDropdown()" class="headerelement">Technologies</button>
+                <div class="dropdown-content" id="dropdownId">
+                    <a href="#">Integration</a><br>
+                    <a href="#">Transformation</a><br>
+                    <a href="#">API</a>
+                </div>
+            </div></div>
+            <div class="navel"><h1 class="headerelement">Careers</h1></div>
+            <div class="navel"><h1 class="headerelement">Product</h1></div>
+            <div class="navel"><h1 class="headerelement">Blog</h1></div>
+
+            <!-- <div class="line"> -->
+            <!-- <hr style="height:2px;width: 100%;border-width:0;color:rgb(199, 193, 193);background-color:rgb(170, 169, 169)"></div> -->
+            
+            
+        </div>
+        <div id="body2">
+            <div class="hiroImg">
+                <img src="https://anytimedeveloper.com/wp-content/uploads/2021/10/2-1.jpg"alt="integration img">
+            </div>
+        </div>
+    </div>
+    <script>
+        function getDropdown(){
+            document.getElementById("dropdownId").classList.toggle("show");
+        }
+
+        window.onclick = function(event){
+            if(!event.target.matches('.headerelement')){
+                var dropdowns=document.getElementsByClassName("dropdown-content");
+                var i;
+                for(i=0;i<dropdowns.length;i++){
+                    var openDropdown= dropdowns[i];
+                    if(openDropdown.classList.contains('show')){
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
